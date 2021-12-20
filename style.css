@@ -1,0 +1,347 @@
+/* Example 1.1*/
+/* #grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2vw;
+}
+
+#grid > div {
+  font-size: 5vw;
+  padding: 0.5em;
+  background: gold;
+  text-align: center;
+} */
+
+/* Example 1.2*/
+/* #grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 2vw;
+}
+
+#grid > div {
+  font-size: 5vw;
+  padding: 0.5em;
+  background: gold;
+  text-align: center;
+} */
+
+/* Example 2 */
+/* body {
+  display: grid;
+  grid-template-areas:
+    "nav header header"
+    "nav article ads"
+    "nav footer ads";
+  grid-template-columns: 20% 1fr 15%;
+  grid-template-rows: 60px 1fr 60px;
+  grid-gap: 10px;
+  height: 100vh;
+  margin: 0;
+}
+
+header,
+footer,
+article,
+nav,
+div {
+  padding: 20px;
+  background: gold;
+}
+
+#pageHeader {
+  grid-area: header;
+}
+#pageFooter {
+  grid-area: footer;
+}
+#mainArticle {
+  grid-area: article;
+}
+#siteAds {
+  grid-area: ads;
+}
+#mainNav {
+  grid-area: nav;
+} */
+
+/* with media query */
+
+/* body { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "footer footer footer";
+  grid-template-rows: 80px 1fr 70px;  
+  grid-template-columns: 20% 1fr 15%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  }  
+
+@media all and (max-width: 575px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-columns: 1fr;
+ }
+}
+header, footer, article, nav, div {
+  padding: 1.2em;
+  background: gold;
+  }
+#pageHeader {
+  grid-area: header;
+  }
+#pageFooter {
+  grid-area: footer;
+  }
+#mainArticle { 
+  grid-area: article;      
+  }
+#mainNav { 
+  grid-area: nav; 
+  }
+#siteAds { 
+  grid-area: ads; 
+  }  */
+
+/* Example 3 */
+/* .grid {
+  display: grid;
+  grid-gap: 2vw;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.grid > div {
+  font-size: 5vw;
+  padding: 0.5em;
+  background: gold;
+  text-align: center;
+}
+
+.auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+} */
+
+/* Example 4 */
+/* #grid {
+  display: grid;
+  grid-template-rows: 60px 60px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  высота для неявных строк 
+  grid-auto-rows: 60px;
+   указываем куда неявные гриды будут расти 
+  grid-auto-flow: column;
+}
+
+#grid > div {
+  padding: 0.5em;
+  background: gold;
+  text-align: center;
+} */
+
+/* Example 5 */
+/* #grid {
+  display: grid;
+  grid-template-rows: 50px 1fr 80px;
+  grid-template-columns: 120px 1fr 80px;
+  // grid-template-rows: [row1-start] 50px [row2-start] 1fr [row3-start] 80px [row3-end];
+  // grid-template-columns: [col1-start] 120px [col2-start] 1fr [col3-start] 80px [col3-end];
+  grid-gap: 5px;
+  height: 90vh;
+}
+
+#grid > div {
+  background-color: #66cc00;
+}
+
+#item1 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 2;
+  grid-column-end: 2;
+}
+
+#item2 {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-row-end: 4;
+  grid-column-end: 4;
+ //grid-row-start: row3-start;
+ // grid-column-start: col2-start;
+ // grid-row-end: row3-end;
+ // grid-column-end: col3-end;
+} 
+*/
+
+/* Example 6 вложенный грид */
+/* #outer-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+#outer-grid > div {
+  background-color: limegreen;
+  color: white;
+  font-size: 4vw;
+  padding: 8px;
+}
+#inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+#inner-grid > div {
+  background: lightgreen;
+  padding: 8px;
+} */
+
+/* Example 7 подгриды */
+/* ul {
+  display: grid;
+  grid: auto-flow / auto 1fr;
+}
+li {
+  grid-column: span 2;
+  display: grid;
+  grid: subgrid;
+  border: solid;
+}
+label {
+  grid-column: 1;
+}
+input {
+  grid-column: 2;
+} */
+
+/* Example 8 форма с авто размещением */
+
+/* .myForm {
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-auto-flow: row;
+    grid-gap: .8em;
+    background: beige;
+    padding: 1.2em;
+  }
+  .myForm > label  {
+    grid-column: labels;
+    grid-row: auto;
+  }
+  .myForm > input,
+  .myForm > textarea {
+    grid-column: controls;
+    grid-row: auto;
+  }
+  .myForm > button {
+    grid-column: span 2;
+  }   */
+
+/* Example 9 грид выравненивание align self */
+
+/* #grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100vh;
+  grid-gap: 10px;
+  align-items: center;
+  background-color: beige;
+}
+#grid > div {
+  padding: 20px;
+  font-size: 4vw;
+  color: white;
+}
+.red {
+  background: orangered;
+  height: 40%;
+  align-self: baseline;
+}
+.green {
+  background: yellowgreen;
+  height: 60%;
+}
+.blue {
+  background: steelblue;
+  height: auto;
+  align-self: stretch;
+}
+body {
+  margin: 0;
+} */
+
+/* Example 10 грид выравненивание justify self */
+
+/* #grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  justify-items: center;
+  background-color: beige;
+}
+#grid > div {
+  padding: 20px;
+  font-size: 4vw;
+  color: white;
+  width: 20%;
+}
+.red {
+  background: orangered;
+  justify-self: end;
+}
+.green {
+  background: yellowgreen;
+}
+.blue {
+  background: steelblue;
+  justify-self: start;
+} */
+
+/* Example 11 грид выравненивание place self */
+/* #grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100vh;
+  grid-gap: 10px;
+  background-color: beige;
+}
+#grid > div {
+  padding: 20px;
+  font-size: 4vw;
+  color: white;
+}
+.red {
+  background: orangered;
+  height: 40%;
+  place-self: end;
+}
+.green {
+  background: yellowgreen;
+  height: 60%;
+  place-self: start center;
+}
+.blue {
+  background: steelblue;
+  height: auto;
+  place-self: center start;
+}
+body {
+  margin: 0;
+} */
